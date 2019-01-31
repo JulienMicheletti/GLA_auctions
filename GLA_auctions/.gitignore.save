@@ -1,0 +1,26 @@
+nbproject/privateGLA_auctions-war/nbproject/private/
+GLA_auctions/GLA_auctions-ejb/nbproject/private/
+GLA_auctions/GLA_auctions-ejb/build/
+GLA_auctions/GLA_auctions-war/build/
+GLA_auctions/build/
+GLA_auctions/GLA_auctions-ejb/dist/
+GLA_auctions/GLA_auctions-war/dist/
+GLA_auctions/dist/
+*.class
+GLA_auctions/build/
+GLA_auctions/bin/
+GLA_auctions/target/
+GLA_auctions/libs/
+GLA_auctions/tmp/
+
+# OS Files #
+.DS_Store
+
+*.class
+
+# Package Files #
+*.jar
+*.war
+*.ear
+*.db
+rebel.xml
