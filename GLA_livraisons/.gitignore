@@ -1,0 +1,10 @@
+
+build/
+dist/
+
+*.class
+
+*.jar
+*.war
+*.ear
+*.db
