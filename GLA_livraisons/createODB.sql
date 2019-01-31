@@ -1,0 +1,11 @@
+
+CREATE TABLE LIVRAISONS (
+	"id" BIGINT NOT NULL PRIMARY KEY
+		GENERATED ALWAYS AS IDENTITY
+		(START WITH 1, INCREMENT BY 1),
+	"creationDate" DATE,
+	"articles" VARCHAR(8192),
+	"price" DOUBLE,
+	"addressFacturation" VARCHAR(64),
+	"addressLivraison" VARCHAR(64)
+);
