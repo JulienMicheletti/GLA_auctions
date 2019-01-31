@@ -1,0 +1,57 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:c="http://xmlns.jcp.org/jsp/jstl/core"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <title>Auction - Create article</title>
+    </h:head>
+    <h:body>
+
+        <h:form>
+
+            <fieldset>
+                <legend>Create an article</legend>
+
+                Label: 
+                <h:inputText value="#{articleBean.label}"
+                             id="labelInput">
+                </h:inputText>
+                <br/>
+
+                starting price: 
+                <h:inputText value="#{articleBean.startingprice}"
+                             id="startingpriceInput">
+                    <f:validateDoubleRange minimum="0.01" maximum="9999.99"/>
+                </h:inputText>
+                <br/>
+
+                short description:
+                <h:inputText value="#{articleBean.description}"
+                             id="descriptionInput">
+                </h:inputText>
+                <br/>
+                Catégories:
+                <h:selectManyListbox value="#{articleBean.categories}">
+                    <f:selectItem itemValue="Cars" itemLabel="Cars" />
+                    <f:selectItem itemValue="VideoGames" itemLabel="VideoGames" />
+                    <f:selectItem itemValue="Cook" itemLabel="Cook" />
+                    <f:selectItem itemValue="Medical" itemLabel="Medical" />
+                    <f:selectItem itemValue="Health" itemLabel="Health" />
+                </h:selectManyListbox>
+                <br/>
+                Deadline:
+                <h:inputText value="#{articleBean.deadline}">  
+                    <f:convertDateTime pattern="yyyy-MM-dd"/>  
+                </h:inputText>
+
+                <h:commandButton value="Submit" 
+                                 action="#{articleBean.greetings}"/>
+                <br/>
+
+            </fieldset>
+        </h:form>
+    </h:body>
+</html>
+
