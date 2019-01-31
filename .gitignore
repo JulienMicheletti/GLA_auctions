@@ -18,3 +18,23 @@ GLA_auctions/GLA_auctions-war/build/
 GLA_auctions/GLA_auctions-war/dist/
 
 GLA_auctions/GLA_auctions-war/nbproject/
+
+GLA_livraisons/nbproject/project\.properties
+
+GLA_livraisons/nbproject/
+
+GLA_livraisons/build/
+
+GLA_livraisons/dist/
+
+GLA_livraisons/GLA_auctions-ejb/build/
+
+GLA_livraisons/GLA_auctions-ejb/dist/
+
+GLA_livraisons/GLA_auctions-ejb/nbproject/
+
+GLA_livraisons/GLA_auctions-war/build/
+
+GLA_livraisons/GLA_auctions-war/dist/
+
+GLA_livraisons/GLA_auctions-war/nbproject/
