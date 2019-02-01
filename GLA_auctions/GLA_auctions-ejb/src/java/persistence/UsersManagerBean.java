@@ -22,8 +22,7 @@ public class UsersManagerBean implements UsersManagerBeanLocal {
     private EntityManager em;
     
     
-    public Boolean addUser(){
-        Users user = new Users();
+    public Boolean addUser(Users user){
         em.persist(user);
         return true;
     }
