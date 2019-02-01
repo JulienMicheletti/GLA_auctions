@@ -31,7 +31,8 @@ import model.Article;
 @Entity
 @Table(name="LIVRAISONS")
 @NamedQueries({
-	@NamedQuery(name="Livraisons.findAll", query="SELECT l FROM Livraison l")
+	@NamedQuery(name="Livraisons.findAll", query="SELECT l FROM Livraison l"),
+	@NamedQuery(name="Livraisons.findById", query="SELECT l FROM Livraison l WHERE l.id = :id")
 })
 public class Livraison implements Serializable
 {

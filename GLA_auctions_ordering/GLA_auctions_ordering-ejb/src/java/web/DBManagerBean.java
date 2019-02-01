@@ -26,7 +26,7 @@ public class DBManagerBean
 	@PersistenceContext(unitName = "GLA_auctions_ordering_PU")
     private EntityManager em;
 	
-	private String livraisonsHTML;
+	private List<Livraison> livraisons;
 	
 	
 	
@@ -35,14 +35,14 @@ public class DBManagerBean
 	
 	
 	
-	public String getLivraisonsHTML()
+	public List<Livraison> getLivraisons ()
 	{
-		this.livraisonsHTML = _getLivraisonsHTML();
-		return livraisonsHTML;
+		this.livraisons = _getLivraisons();
+		return livraisons;
 	}
 
-	public void setLivraisonsHTML(String livraisonsHTML) {
-		this.livraisonsHTML = livraisonsHTML;
+	public void setLivraisons (List<Livraison> livraisons) {
+		this.livraisons = livraisons;
 	}
 	
 	
@@ -56,13 +56,16 @@ public class DBManagerBean
 		return query.getResultList();
 	}
 	
-	private String _getLivraisonsHTML ()
+	public Livraison getLivraison (long id)
 	{
-		String s = "";
-		for (Livraison l : _getLivraisons()) {
-			s += ("<tr><td><input type=\"radio\" name=\"" + l.getId() + "\" /></td><td>" + l + "</td></tr>");
-		}
-		return s;
+		TypedQuery<Livraison> query = em.createNamedQuery("Livraisons.findById", Livraison.class);
+		query.setParameter("id", id);
+		return query.getSingleResult();
+	}
+	
+	void remove (Livraison l)
+	{
+		em.remove(l);
 	}
 	
 
