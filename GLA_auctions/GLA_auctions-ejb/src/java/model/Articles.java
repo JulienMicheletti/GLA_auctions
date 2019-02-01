@@ -36,6 +36,7 @@ import javax.xml.bind.annotation.XmlRootElement;
     , @NamedQuery(name = "Articles.findByCategories", query = "SELECT a FROM Articles a WHERE a.categories = :categories")
     , @NamedQuery(name = "Articles.findByDeadline", query = "SELECT a FROM Articles a WHERE a.deadline = :deadline")
     , @NamedQuery(name = "Articles.findByActif", query = "SELECT a FROM Articles a WHERE a.actif = :actif")
+    , @NamedQuery(name = "Articles.findByActifExceptUser", query = "SELECT a FROM Articles a WHERE a.actif = :actif AND a.iduser != :iduser")
     , @NamedQuery(name = "Articles.findByIdencheremax", query = "SELECT a FROM Articles a WHERE a.idencheremax = :idencheremax")
     , @NamedQuery(name = "Articles.findByIduser", query = "SELECT a FROM Articles a WHERE a.iduser = :iduser")
     , @NamedQuery(name = "Articles.findByPaid", query = "SELECT a FROM Articles a WHERE a.paid = :paid")})

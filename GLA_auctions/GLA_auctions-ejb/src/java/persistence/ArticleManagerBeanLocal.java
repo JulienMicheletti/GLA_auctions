@@ -6,8 +6,10 @@
 package persistence;
 
 import java.util.Date;
+import java.util.List;
 import javax.ejb.Local;
 import model.Articles;
+import model.Users;
 
 /**
  *
@@ -20,5 +22,7 @@ public interface ArticleManagerBeanLocal {
     public Articles unactifArticle(int id);
     public void deleteArticle(int id);
     public Boolean addArticle(String label, double startingprice, String description, Date deadline, int idUser);
+    public List<Articles> allArticlesExceptUser(Users u);
+    public List<Articles> allByUserArticles(Users u);
     
 }

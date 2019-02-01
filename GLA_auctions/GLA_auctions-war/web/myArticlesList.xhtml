@@ -1,0 +1,42 @@
+<%@page contentType="text/html" pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <title>Mes articles</title>
+    </head>
+    <body>
+        <h1>Mes articles que j'ai mis en vente</h1>
+        <h:form>
+            <h:dataTable var="row" 
+                         value="#{articleBean.allUserArtcles()}"
+                         border="1" >
+                <h:column>
+                    <f:facet name="header">Nom</f:facet>
+                    #{row.label}
+                </h:column>
+                <h:column>
+                    <f:facet name="header">Description</f:facet>
+                    #{row.description}
+                </h:column>
+                <h:column>
+                    <f:facet name="header">Prix de départ</f:facet>
+                    #{row.startingprice}
+                </h:column>
+                <h:column>
+                    <f:facet name="header">Valeur actuelle</f:facet>
+                    #{row.actualPrice}
+                </h:column>
+                <h:column>
+                    <f:facet name="header">Date de fin d'enchère</f:facet>
+                    #{row.deadline}
+                </h:column>
+                <h:column>
+                   <h:commandButton value="Retirer de la vente" 
+                                 action="#{articleBean.retirerArticle}"/>
+                </h:column>
+            </h:dataTable>
+            <p/>
+        </h:form>
+    </body>
+</html>

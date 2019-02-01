@@ -10,6 +10,7 @@ package connection;
  * @author Jc
  */
 
+import article.ArticleBean;
 import java.io.IOException;
 
 import javax.servlet.ServletException;
@@ -40,7 +41,6 @@ public class Connexion extends HttpServlet {
 
         /* Récupération de la session depuis la requête */
         HttpSession session = request.getSession();
-
         /**
          * Si aucune erreur de validation n'a eu lieu, alors ajout du bean
          * Utilisateur à la session, sinon suppression du bean de la session.
@@ -55,6 +55,7 @@ public class Connexion extends HttpServlet {
         request.setAttribute( ATT_FORM, form );
         request.setAttribute( ATT_USER, utilisateur );
 
+        ArticleBean articleBean = new ArticleBean(session);
         this.getServletContext().getRequestDispatcher( VUE ).forward( request, response );
     }
 }
