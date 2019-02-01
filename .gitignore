@@ -19,6 +19,15 @@ GLA_auctions/GLA_auctions-war/dist/
 
 GLA_auctions/GLA_auctions-war/nbproject/
 
+/GLA_auctions/nbproject/private/
+/GLA_auctions/GLA_auctions-war/nbproject/private/
+/GLA_auctions/GLA_auctions-ejb/nbproject/private/
+/GLA_auctions/build/
+/GLA_auctions/dist/
+/GLA_auctions/GLA_auctions-war/build/
+/GLA_auctions/GLA_auctions-war/dist/
+/GLA_auctions/GLA_auctions-ejb/dist/
+/GLA_auctions/GLA_auctions-ejb/build/
 
 /GLA_auctions_ordering/nbproject/private/
 /GLA_auctions_ordering/GLA_auctions_ordering-war/nbproject/private/
