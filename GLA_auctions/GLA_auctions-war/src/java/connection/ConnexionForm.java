@@ -75,8 +75,8 @@ public final class ConnexionForm {
      * Valide le mot de passe saisi.
      */
     private void validationMotDePasse( String motDePasse ) throws Exception {
-        System.out.println("verif");
         if ( motDePasse != null ) {
+            System.out.println(motDePasse);
             if ( motDePasse.length() < 3 ) {
                 throw new Exception( "Le mot de passe doit contenir au moins 3 caractères." );
             } else {

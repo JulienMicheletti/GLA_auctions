@@ -5,20 +5,10 @@
  */
 package persistence;
 
-import static java.lang.reflect.Array.set;
-import java.sql.Connection;
-import java.sql.Date;
-import java.sql.ResultSet;
-import java.sql.SQLException;
-import java.sql.Statement;
-import java.util.ArrayList;
-import java.util.List;
-import javax.annotation.*;
 import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import javax.persistence.Query;
-import javax.sql.DataSource;
 import model.Users;
 
 /**
@@ -28,31 +18,9 @@ import model.Users;
 @Stateless(name = "UserManager")
 public class UsersManagerBean implements UsersManagerBeanLocal {
     
-    @PersistenceContext(unitName = "GLA_auctions-ejbPU")
+    @PersistenceContext(unitName = "GLAPU")
     private EntityManager em;
-
-    @Resource(lookup = "jdbc/GLA")
-    private DataSource dataSource;
-    private Connection connection;
     
-    @PostConstruct
-    public void initialize() {
-        try {
-            connection = dataSource.getConnection();
-        } catch (SQLException sqle) {
-            sqle.printStackTrace();
-        }
-    }
-    
-    @PreDestroy
-    public void cleanup() {
-        try {
-            connection.close();
-            connection = null;
-        } catch (SQLException sqle) {
-            sqle.printStackTrace();
-        }
-    }
     
     public Boolean addUser(){
         Users user = new Users();
@@ -80,6 +48,8 @@ public class UsersManagerBean implements UsersManagerBeanLocal {
 
     @Override
     public Users getCustommerLogin(String login) {
+        Query q = em.createNamedQuery("Users.findAll");
+        System.out.println(q.getResultList());
         Query query = em.createNamedQuery("Users.findByLogin");
         query.setParameter("login",login);
         return (Users)query.getSingleResult();
@@ -130,9 +100,9 @@ public class UsersManagerBean implements UsersManagerBeanLocal {
     }
 
     public Users find(String champ, String valeur){
-        Users res = new Users();
+        /*Users res = new Users();
         try{
-            Statement stmt = connection.createStatement();
+            /*Statement stmt = connection.createStatement();
             ResultSet rs = stmt.executeQuery("SELECT u FROM USERS WHERE "+champ+"="+valeur);
             while(rs.next()){
                 res.setLogin(rs.getString("login"));
@@ -146,11 +116,13 @@ public class UsersManagerBean implements UsersManagerBeanLocal {
         }catch(SQLException sqle){
             sqle.printStackTrace();
         }
-        return res;
-        
+        return res;*/
+
+
+        return null;
     }
     
-  
+
         
     
 }

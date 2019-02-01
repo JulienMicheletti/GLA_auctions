@@ -28,31 +28,9 @@ import model.Users;
 @Stateless(name = "EncheresManager")
 public class EncheresManagerBean implements EncheresManagerBeanLocal{
 
-    @PersistenceContext(unitName = "GLA_auctions-ejbPU")
+    @PersistenceContext(unitName = "GLAPU")
     private EntityManager em;
 
-    @Resource(lookup = "jdbc/GLA")
-    private DataSource dataSource;
-    private Connection connection;
-    
-    @PostConstruct
-    public void initialize() {
-        try {
-            connection = dataSource.getConnection();
-        } catch (SQLException sqle) {
-            sqle.printStackTrace();
-        }
-    }
-    
-    @PreDestroy
-    public void cleanup() {
-        try {
-            connection.close();
-            connection = null;
-        } catch (SQLException sqle) {
-            sqle.printStackTrace();
-        }
-    }
     
     @Override
     public Boolean addEncheres(int idarticle, int iduser, double proposition, int idlastenchere) {
@@ -95,7 +73,7 @@ public class EncheresManagerBean implements EncheresManagerBeanLocal{
 
     @Override
     public Encheres find(String champ, String valeur) {
-        Encheres res = new Encheres();
+        /*Encheres res = new Encheres();
         try{
             Statement stmt = connection.createStatement();
             ResultSet rs = stmt.executeQuery("SELECT u FROM ENCHERES WHERE "+champ+"="+valeur);
@@ -110,7 +88,8 @@ public class EncheresManagerBean implements EncheresManagerBeanLocal{
         }catch(SQLException sqle){
             sqle.printStackTrace();
         }
-        return res;
+        return res;*/
+        return null;
     }
     
 }
