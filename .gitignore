@@ -29,3 +29,14 @@ GLA_auctions/GLA_auctions-war/nbproject/
 /GLA_auctions_ordering/GLA_auctions_ordering-war/dist/
 /GLA_auctions_ordering/GLA_auctions_ordering-ejb/dist/
 /GLA_auctions_ordering/GLA_auctions_ordering-ejb/build/
+
+
+/GLA_auctions_billing/nbproject/private/
+/GLA_auctions_billing/GLA_auctions_billing-war/nbproject/private/
+/GLA_auctions_billing/GLA_auctions_billing-ejb/nbproject/private/
+/GLA_auctions_billing/build/
+/GLA_auctions_billing/dist/
+/GLA_auctions_billing/GLA_auctions_billing-war/build/
+/GLA_auctions_billing/GLA_auctions_billing-war/dist/
+/GLA_auctions_billing/GLA_auctions_billing-ejb/dist/
+/GLA_auctions_billing/GLA_auctions_billing-ejb/build/
